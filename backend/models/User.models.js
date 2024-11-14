@@ -15,10 +15,11 @@ const userSchema= new mongoose.Schema({
         required:true,
         minlength:6
     },
-    phoneNo:{
-        type:String,
+    cars:[{
+        type:mongoose.Types.ObjectId,
+        ref:"Car",
         required:true
-    }
+    }]
    
 }) 
 const User=mongoose.model("User",userSchema);
