@@ -4,20 +4,20 @@ const User = require('../models/User.models.js');
 
 
 
-const deletePost = async (req, res, next) => {
+const deleteCar = async (req, res, next) => {
 
     const carId = req.params.id.trim();
     let car;
 
     try {
         
-        console.log(postId)
+        console.log(carId)
         car = await Car.findById(carId).populate('user');
         if (!car) {
             return res.status(404).json({ message: "Post not found" });
         }
 
-        const user = post.user;
+        const user = car.user;
         user.cars.pull(car._id); 
         await user.save();
 
@@ -30,4 +30,4 @@ const deletePost = async (req, res, next) => {
         res.status(500).json({ message: "Unable to delete" });
     }
 }
-module.exports=deletePost;
+module.exports=deleteCar;
