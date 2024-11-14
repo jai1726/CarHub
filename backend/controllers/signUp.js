@@ -6,8 +6,8 @@ const bcrypt=require('bcrypt');
  const signUp = async (req, res, next) => {
     console.log("request recieved");
     console.log(req.body);
-    const { email, name, password, phoneNo } = req.body;
-    if (!email || !name || !password || !phoneNo) {
+    const { email, name, password } = req.body;
+    if (!email || !name || !password ) {
         return res.status(404).json({ message: "Enter all fields" });
     }
     let existingUser;
@@ -26,8 +26,7 @@ const bcrypt=require('bcrypt');
     const user = new User({
         email, 
         name,
-        password:hashedPassword,
-        phoneNo,
+        password:hashedPassword
     });
 
     try {
