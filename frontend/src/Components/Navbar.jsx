@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-600 to-purple-700 shadow-lg p-4">
+    <nav className="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg p-4">
       {!localStorage.getItem('jwtToken') ? (
         <div className="flex justify-between items-center">
           <div className="text-white font-extrabold text-2xl">

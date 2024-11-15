@@ -20,12 +20,12 @@ const CarDetails = () => {
       const response = await fetch(`http://localhost:5000/api/car/delete/${car._id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
       if (response.ok) {
-        navigate('/myCars'); 
+        navigate('/myCars');
       } else {
         console.error('Failed to delete the car');
       }
@@ -37,37 +37,39 @@ const CarDetails = () => {
   return (
     <>
       <Navbar />
-      <div className="p-6 max-w-screen-lg mx-auto">
-        <div className="relative bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+      <div className="p-6 w-full">
+        <div className="relative bg-white shadow-lg rounded-lg overflow-hidden mb-8 w-full">
           <Carousel showThumbs={false} infiniteLoop autoPlay>
             {car.images.map((image, index) => (
               <div key={index}>
-                <img src={image} alt={`Car image ${index + 1}`} className="w-full h-[40vh] object-cover" />
+                <img src={image} alt={`Car image ${index + 1}`} className="w-full h-[60vh] object-cover" />
               </div>
             ))}
           </Carousel>
         </div>
 
-        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <h1 className="text-3xl font-bold mb-2">{car.tittle}</h1>
-          <p className="text-gray-700 mb-4">{car.description}</p>
-          <p className="font-semibold">Company: {car.company}</p>
-          <p>Type: {car.car_type}</p>
-          <p>Price Range: {car.price_range}</p>
-          <p>Color: {car.color}</p>
-          <p>Dealer: {car.dealer}</p>
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg w-full">
+          <h1 className="text-4xl font-bold mb-4">{car.tittle}</h1>
+          <p className="text-gray-700 mb-6">{car.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+            <p><span className="font-semibold">Company:</span> {car.company}</p>
+            <p><span className="font-semibold">Type:</span> {car.car_type}</p>
+            <p><span className="font-semibold">Price Range:</span> {car.price_range}</p>
+            <p><span className="font-semibold">Color:</span> {car.color}</p>
+            <p><span className="font-semibold">Dealer:</span> {car.dealer}</p>
+          </div>
 
           {isOwner && (
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-center gap-8 mt-8">
               <button
                 onClick={handleEditClick}
-                className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
+                className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition"
               >
                 Edit
               </button>
               <button
                 onClick={handleDeleteClick}
-                className="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition"
+                className="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 transition"
               >
                 Delete
               </button>
