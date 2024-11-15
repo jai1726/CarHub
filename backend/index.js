@@ -12,9 +12,15 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 const app = express();
-app.use(express.json());
-app.use(cors());
 
+app.use(cors(
+    // {
+    //     origin:["https://deploy-mern-1whq.vercel.app"],
+    //     methods:["POST","GET","DELETE","PUT"],
+    //     credentials:true
+    // }
+));
+app.use(express.json());
 connectDB();
 
 app.use("/api/user", router);
@@ -23,10 +29,10 @@ app.use("/api/docs",DocsRouter);
 
     
 
-// app.use('/', (req, res) => {
-//     console.log("GET request received");
-//     res.status(200).json({ message: "APi request working" });
-// });
+app.use('/', (req, res) => {
+    
+    res.json("hello");
+});
 
 
 
