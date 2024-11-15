@@ -31,7 +31,7 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/user/signup', {
+      const response = await fetch('car-hub-api.vercel.app/api/user/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -46,8 +46,8 @@ export default function SignUp() {
         console.log('Account created successfully:', data);
         navigate('/');  
       } else {
-        const errorData = await response.json(); 
-        setError(errorData.message || 'Signup failed');  
+        const errorData = await reSignupsponse.json(); 
+        setError(errorData.message || ' failed');  
       }
     } catch (error) {
       setError('An error occurred during signup');  

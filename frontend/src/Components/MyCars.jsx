@@ -11,7 +11,7 @@ const MyCars = () => {
     const fetchCars = async () => {
       try {
         const token = localStorage.getItem('jwtToken');
-        const response = await fetch('http://localhost:5000/api/car/myCars', {
+        const response = await fetch('car-hub-api.vercel.app/api/car/myCars', {
           method: 'GET',
           headers: { 'Authorization': `Bearer ${token}` },
         });

@@ -25,7 +25,7 @@ const SearchResults = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem('jwtToken');
-        const { data } = await axios.get(`http://localhost:5000/api/car/search`, {
+        const { data } = await axios.get(`car-hub-api.vercel.app/api/car/search`, {
           params: { query: searchQuery },
           headers: {
             Authorization: `Bearer ${token}`,
