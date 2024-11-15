@@ -15,7 +15,7 @@ const addCar=async(req,res,next)=>{
         return res.status(400).json({ message: 'max 10 images can upload' });
       }
 
-    // Extract URLs from uploaded images
+    
     const images = pics.map(image => image.path);
     console.log(typeof(images));
 // console.log(req.files);
