@@ -46,7 +46,7 @@ export default function SignUp() {
         console.log('Account created successfully:', data);
         navigate('/');  
       } else {
-        const errorData = await reSignupsponse.json(); 
+        const errorData = await response.json(); 
         setError(errorData.message || ' failed');  
       }
     } catch (error) {
