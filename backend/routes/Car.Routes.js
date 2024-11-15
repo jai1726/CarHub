@@ -14,7 +14,7 @@ const carRouter=express.Router();
 carRouter.post('/addCar',authenticateToken,upload.array('images',10),addCar);
 carRouter.delete('/delete/:id',authenticateToken,deleteCar);
 carRouter.put('/updateCar/:id',authenticateToken,upload.array('images',10),updateCar);
-carRouter.get('/search/',authenticateToken,searchResult);
+carRouter.get('/search',authenticateToken,searchResult);
 carRouter.get('/myCars',authenticateToken,myCars);
 // carRouter.get('/:id',authenticateToken,getCarById);
 
