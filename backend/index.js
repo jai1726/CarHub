@@ -14,11 +14,11 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 app.use(cors(
-    // {
-    //     origin:["https://deploy-mern-1whq.vercel.app"],
-    //     methods:["POST","GET","DELETE","PUT"],
-    //     credentials:true
-    // }
+    {
+        origin:["https://deploy-mern-1whq.vercel.app"],
+        methods:["POST","GET","DELETE","PUT"],
+        credentials:true
+    }
 ));
 app.use(express.json());
 connectDB();
