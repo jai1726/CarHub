@@ -15,9 +15,9 @@ const app = express();
 
 app.use(cors(
     {
-        origin:["https://car-hub-frontend-drab.vercel.app/"],
-        methods:["POST","GET","DELETE","PUT"],
-        credentials:true
+        // origin:["https://car-hub-frontend-drab.vercel.app/"],
+        // methods:["POST","GET","DELETE","PUT"],
+        // credentials:true
     }
 ));
 app.use(express.json());
@@ -29,10 +29,10 @@ app.use("/api/docs",DocsRouter);
 
     
 
-app.use('/', (req, res) => {
+// app.use('/', (req, res) => {
     
-    res.json("hello");
-});
+//     res.json("hello");
+// });
 
 
 
