@@ -59,7 +59,7 @@ const AddCar = () => {
 
     try {
       const token = localStorage.getItem('jwtToken');
-      const response = await fetch(carDetails ? `car-hub-api.vercel.app/api/car/updateCar/${car._id}` : 'car-hub-api.vercel.app/api/car/add', {
+      const response = await fetch(carDetails ? `https://car-hub-api.vercel.app/api/car/updateCar/${car._id}` : 'https://car-hub-api.vercel.app/api/car/add', {
         method: carDetails ? 'PUT' : 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

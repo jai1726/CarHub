@@ -17,7 +17,7 @@ const CarDetails = () => {
   const handleDeleteClick = async () => {
     const token = localStorage.getItem('jwtToken');
     try {
-      const response = await fetch(`car-hub-api.vercel.app/api/car/delete/${car._id}`, {
+      const response = await fetch(`https://car-hub-api.vercel.app/api/car/delete/${car._id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

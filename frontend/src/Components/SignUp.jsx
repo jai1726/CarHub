@@ -31,7 +31,7 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('car-hub-api.vercel.app/api/user/signup', {
+      const response = await fetch('https://car-hub-api.vercel.app/api/user/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

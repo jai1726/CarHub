@@ -25,16 +25,19 @@ export default function Login() {
   };
 
   const handleSubmit = async (e) => {
+    console.log("1");
     e.preventDefault();
     try {
-      const response = await fetch('car-hub-api.vercel.app/api/user/login', {
+      console.log("3");
+      const response = await fetch('https://car-hub-api.vercel.app/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
-
+      console.log("3");
+     console.log(response);
       if (response.ok) {
         const data = await response.json();
         const token = data.token;
