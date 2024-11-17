@@ -1,5 +1,6 @@
 # CarHub
-React based application shows movement of drone on the map  based on input coordinates and timestamps.It allows  to input coordinates manually or upload a csv file to visualize the drone path.Example Input csv files are  in ./src/assets
+CarHub is a web application designed to simplify car management. Users can create, view, edit, and delete car listings, and search for cars using various filters. The app includes user authentication to ensure secure access and personal data protection.
+
 
 ## Features
 
